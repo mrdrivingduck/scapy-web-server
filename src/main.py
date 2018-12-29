@@ -9,12 +9,12 @@
 import tornado.ioloop
 import router
 from config import getPort
-from logger import logger
+from logger import serverLogger
 
 if __name__ == "__main__":
 
-    logger.info("Initializing WEB server...")
-    logger.info("Server will be listeining at:" + getPort())
+    serverLogger.info("Initializing WEB server...")
+    serverLogger.info("Server will be listeining at:" + getPort())
 
     # Server starting
     server = router.make_router()

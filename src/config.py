@@ -7,10 +7,10 @@
 '''
 
 import configparser
-from logger import logger
+from logger import serverLogger
 
 def loadConfig(path):
-    logger.info("Loading WEB configuration.")
+    serverLogger.info("Loading WEB configuration.")
 
     if not isinstance(path, str):
         raise TypeError("not a valid file path")

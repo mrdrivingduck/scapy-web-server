@@ -13,7 +13,7 @@
 import tornado.web
 import json
 from config import getArpingTimeout
-from logger import logger
+from logger import serverLogger
 from scapy.sendrecv import srp
 from scapy.layers.l2 import Ether
 from scapy.layers.l2 import ARP
@@ -37,3 +37,10 @@ class ArpingHandler(tornado.web.RequestHandler):
 
     def post(self):
         pass
+
+    def prepare(self):
+        serverLogger.info("Handler - ARPING request")
+
+    def on_finish(self):
+        serverLogger.info("Handler - ARPING complete")
+    
