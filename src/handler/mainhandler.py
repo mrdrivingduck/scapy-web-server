@@ -1,3 +1,11 @@
+'''
+    @author - mrdrivingduck
+    @version - 2018.12.29
+    @function - 
+        Handler for root URL.
+        Used only for testing.
+'''
+
 import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):

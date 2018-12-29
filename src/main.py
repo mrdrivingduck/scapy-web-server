@@ -1,30 +1,22 @@
+'''
+    @author - mrdrivingduck
+    @version 2018.12.29
+    @function - 
+        The entry of WEB server.
+        Bind the port of server and start listening.
+'''
+
 import tornado.ioloop
-import logging
-import logging.config
-import configparser
 import router
-
-def loadConfig(path):
-    if not isinstance(path, str):
-        raise TypeError("not a valid file path")
-    conf = configparser.ConfigParser()
-    if conf.read(path).__len__() == 0:
-        raise FileNotFoundError("file not found")
-    return conf
-
-def getPort(conf):
-    return conf.get("web", "port")
+from config import getPort
+from logger import logger
 
 if __name__ == "__main__":
-    # Loading configurations
-    conf = loadConfig("conf/localDebug.ini")
-    logging.config.fileConfig("conf/loggingConfig.ini")
-    logger = logging.getLogger("root")
 
-    logger.info("Initialize ending...")
-    logger.info("Server listeining at:" + getPort(conf))
+    logger.info("Initializing WEB server...")
+    logger.info("Server will be listeining at:" + getPort())
 
     # Server starting
     server = router.make_router()
-    server.listen(getPort(conf))
+    server.listen(getPort())
     tornado.ioloop.IOLoop.current().start()
