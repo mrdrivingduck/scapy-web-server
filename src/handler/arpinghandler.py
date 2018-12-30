@@ -1,6 +1,6 @@
 '''
     @author - mrdrivingduck
-    @version - 2018.12.29
+    @version - 2018.12.30
     @funtion - 
         Use Scapy to preform an ARPING function.
         The network segment is from HTTP GET URL.
@@ -12,16 +12,16 @@
 
 import tornado.web
 import json
-from config import getArpingTimeout
 from logger import serverLogger
 from scapy.sendrecv import srp
 from scapy.layers.l2 import Ether
 from scapy.layers.l2 import ARP
+from main import conf
 
 class ArpingHandler(tornado.web.RequestHandler):
 
     def get(self, net):
-        timeout = getArpingTimeout()
+        timeout = conf.getArpingTimeout()
         ans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=net),timeout=timeout, filter="arp and arp[7] = 2", iface_hint=net)
         ans = ans[0]
 
