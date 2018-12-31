@@ -1,6 +1,6 @@
 '''
     @author - mrdrivingduck
-    @version - 2018.12.30
+    @version - 2018.12.31
     @function - 
         A thread-safe ring queue.
 '''
@@ -33,6 +33,9 @@ class RingBuffer():
         else:
             return False
 
+    def length(self):
+        return (self.__tail - self.__head + self.__bufsize) % self.__bufsize
+
     '''
         @return - element poped (None if buffer is empty)
     '''
@@ -62,4 +65,3 @@ class RingBuffer():
         finally:
             self.__lock.release()
         return overflow
-        

@@ -8,12 +8,18 @@
 
 import threading
 import json
-from main import conf
-from main import buff
+from globall import conf
+from globall import buff
 from logger import serverLogger
-from scapy.all import *
 from message.packetmessage import PacketMessage
+from scapy.all import *
 
+'''
+    @param - packet
+    @function - 
+        Called when a packet is captured
+        Store the packet into the buffer
+'''
 def callback(packet):
 
     if ("TCP" or "UDP") in packet.summary():
@@ -25,10 +31,10 @@ def callback(packet):
         dst_mac = packet.sprintf("%dst%")
         msg = PacketMessage(src_mac, dst_mac, src_ip, dst_ip, src_port, dst_port)
 
-        overflow = buff.push(json.dumps(msg, default=lambda obj: obj.__dict__))
+        overflow = buff.push(msg.__dict__)
         if overflow != None:
             serverLogger.warning("Packet overflowed from buffer")
-        serverLogger.info("Captured packet")
+        serverLogger.debug("Captured packet - Queue len: " + str(buff.length()))
 
 def snifferThread():
     sniff(prn=callback)

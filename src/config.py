@@ -1,6 +1,6 @@
 '''
     @author - mrdrivingduck
-    @version - 2018.12.30
+    @version - 2018.12.31
     @function - 
         Loading WEB configurations from file.
         API for getting configurations.

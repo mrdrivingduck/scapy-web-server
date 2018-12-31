@@ -7,6 +7,7 @@
 '''
 
 import tornado.web
+from logger import serverLogger
 
 class MainHandler(tornado.web.RequestHandler):
 
@@ -15,3 +16,9 @@ class MainHandler(tornado.web.RequestHandler):
 
     def post(self):
         self.write("POST - testing pages")
+
+    def prepare(self):
+        serverLogger.info("MainHanlder got request")
+
+    def on_finish(self):
+        serverLogger.info("MainHanlder complete")

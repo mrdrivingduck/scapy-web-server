@@ -20,7 +20,7 @@ Development of _handlers_ for corresponding _Scapy_ functions
 | Target               | Status | Date       |
 | -------------------- | ------ | ---------- |
 | `arping()`           | ✔️      | 2018.12.29 |
-| `sniff()` (Wired)    | ❓      | /          |
+| `sniff()` (Wired)    | ✔️      | 2018.12.31 |
 | `sniff()` (Wireless) | ❌      | /          |
 | `Dot11()`            | ❌      | /          |
 | ...                  | /      | /          |
