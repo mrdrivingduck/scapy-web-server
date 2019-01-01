@@ -1,6 +1,6 @@
 '''
     @author - mrdrivingduck
-    @version - 2018.12.31
+    @version - 2019.1.1
     @function - 
         A thread-safe ring queue.
 '''
@@ -40,28 +40,28 @@ class RingBuffer():
         @return - element poped (None if buffer is empty)
     '''
     def pop(self):
-        if self.empty():
-            return None
         self.__lock.acquire()
         try:
+            if self.empty():
+                return None
             head = self.__buff[self.__head]
             self.__head = (self.__head + 1) % self.__bufsize
+            return head
         finally:
             self.__lock.release()
-        return head
 
     '''
         @param obj - element to be pushed
         @return - element poped if overflow
     '''
     def push(self, obj):
-        overflow = None
-        if self.full():
-            overflow = self.pop()
         self.__lock.acquire()
         try:
+            overflow = None
+            if self.full():
+                overflow = self.pop()
             self.__buff[self.__tail] = obj
             self.__tail = (self.__tail + 1) % self.__bufsize
+            return overflow
         finally:
             self.__lock.release()
-        return overflow
