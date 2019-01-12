@@ -13,17 +13,7 @@ A WEB server based on _[Scapy](https://scapy.net/)_ tools.
 
 You can remotely invoke _Scapy_'s functions through _HTTP_
 
-### Issues
-
-Development of _handlers_ for corresponding _Scapy_ functions
-
-| Target               | Status | Date       |
-| -------------------- | ------ | ---------- |
-| `arping()`           | ✔️      | 2018.12.29 |
-| `sniff()` (Wired)    | ✔️      | 2018.12.31 |
-| `sniff()` (Wireless) | ❌      | /          |
-| `Dot11()`            | ❌      | /          |
-| ...                  | /      | /          |
+Maybe, a _Java_ client can be used for requesting - _[scapy-java-client](https://github.com/mrdrivingduck/scapy-java-client)_.
 
 ---
 
