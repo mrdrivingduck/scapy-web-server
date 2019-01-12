@@ -20,12 +20,12 @@ if __name__ == "__main__":
     serverLogger.info("Server will be listeining at:" + conf.getPort())
 
     # Sniffer starting
-    tSniffer = threading.Thread(target=snifferThread, name="sniffer thread")
-    tSniffer.start()
+    # tSniffer = threading.Thread(target=snifferThread, name="sniffer thread")
+    # tSniffer.start()
 
     # Server starting
     server = router.make_router()
     server.listen(conf.getPort())
     tornado.ioloop.IOLoop.current().start()
     
-    tSniffer.join()
+    # tSniffer.join()
