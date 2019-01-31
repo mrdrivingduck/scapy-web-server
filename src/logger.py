@@ -1,10 +1,10 @@
-'''
+"""
     @author - mrdrivingduck
     @version - 2018.12.29
     @function - 
         Loading the logging configuration from file.
         Initializing the logger.
-'''
+"""
 
 import logging
 

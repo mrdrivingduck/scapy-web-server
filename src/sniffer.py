@@ -8,8 +8,8 @@
 
 import threading
 import json
-from globall import conf
-from globall import buff
+from glob import conf
+from glob import buff
 from logger import serverLogger
 from message.packetmessage import PacketMessage
 from scapy.all import *

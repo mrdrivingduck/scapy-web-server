@@ -1,20 +1,15 @@
-'''
-    @author - mrdrivingduck
-    @version 2018.12.31
+"""
+    @author - Mr Dk.
+    @version 2019.01.31
     @function - 
         Make the routing table.
         Mapping of URLs and Handlers.
-'''
+"""
 
 import tornado.web
-from handler.mainhandler import MainHandler
-from handler.arpinghandler import ArpingHandler
-from handler.sniffhandler import SniffHanlder
+from Handler.mainhandler import MainHandler
+
 
 def make_router():
-    router = []
-    router.append((r"/", MainHandler))
-    router.append((r"/arping/(.*)", ArpingHandler))
-    router.append((r"/sniff", SniffHanlder))
-    
+    router = [(r"/", MainHandler)]
     return tornado.web.Application(router)

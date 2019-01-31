@@ -7,10 +7,10 @@
 
 import tornado.web
 import json
-from globall import buff
+from glob import buff
 from logger import serverLogger
 
-class SniffHanlder(tornado.web.RequestHandler):
+class SniffHanlder(object):
 
     def get(self):
         arr = []
