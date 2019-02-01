@@ -7,7 +7,7 @@
 """
 
 import tornado.web
-from Handler.mainhandler import MainHandler
+from handler.mainhandler import MainHandler
 
 
 def make_router():

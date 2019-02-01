@@ -8,7 +8,7 @@
 
 import tornado.ioloop
 import router
-from glob import conf
+from serverglob import conf
 from logger import serverLogger
 
 if __name__ == "__main__":

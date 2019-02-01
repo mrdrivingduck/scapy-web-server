@@ -2,12 +2,12 @@
     @author - mrdrivingduck
     @version - 2018.12.31
     @function - 
-        Handler for getting sniffed data.
+        handler for getting sniffed data.
 '''
 
 import tornado.web
 import json
-from glob import buff
+from serverglob import buff
 from logger import serverLogger
 
 class SniffHanlder(object):
