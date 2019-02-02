@@ -3,6 +3,8 @@
     @version - 2018.12.31
     @function - 
         handler for getting sniffed data.
+
+    @PASS
 '''
 
 import tornado.web
@@ -13,11 +15,12 @@ from logger import serverLogger
 class SniffHanlder(object):
 
     def get(self):
-        arr = []
-        while not buff.empty():
-            pkt = buff.pop()
-            arr.append(pkt)
-        self.write(json.dumps(arr))
+        # arr = []
+        # while not buff.empty():
+        #     pkt = buff.pop()
+        #     arr.append(pkt)
+        # self.write(json.dumps(arr))
+        pass
 
     def post(self):
         pass

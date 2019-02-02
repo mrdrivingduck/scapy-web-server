@@ -6,6 +6,7 @@
         The network segment is from HTTP GET URL.
     @test -
         curl -i -X POST -H "Content-Type: application/json" -d "{ \"handler\": \"arping\", \"params\": { \"timeout\": 3, \"net\": \"192.168.1.100/24\" } }" http://localhost:8888/
+    @error - 
         curl -i -X POST -H "Content-Type: application/json" -d "{ \"handler\": \"arping\", \"params\": { \"net\": \"192.168.1.100/24\" } }" http://localhost:8888/
         curl -i -X POST -H "Content-Type: application/json" -d "{ \"handler\": \"arping\", \"params\": { \"timeout\": 3 } }" http://localhost:8888/
 
