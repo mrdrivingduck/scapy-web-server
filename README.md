@@ -1,5 +1,6 @@
 # scapy-web-server
-🔬 A Python WEB server using _Scapy_ tools.
+
+🔬 A Python WEB server using *Scapy* tools.
 
 Created by : Mr Dk.
 
@@ -7,19 +8,24 @@ Created by : Mr Dk.
 
 ---
 
-### About
+## About
 
-A WEB server based on packet manipulation tools.
+A WEB server based on packet manipulation tools. You can remotely invoke packet manipulation functions through HTTP by *curl*. Or maybe, a Java client program can be used for HTTP requesting - [*scapy-java-client*](https://github.com/mrdrivingduck/scapy-java-client).
 
-You can remotely invoke packet manipulation functions through _HTTP_ by _curl_.
+## Dependency
 
-Or maybe, a _Java_ client program can be used for _HTTP_ requesting - _[scapy-java-client](https://github.com/mrdrivingduck/scapy-java-client)_.
+* [Tornado](https://github.com/tornadoweb/tornado) 6.1 - A Python web framework and asynchronous networking library
+* [Scapy](https://github.com/secdev/scapy) 2.4.4 - A Python-based interactive packet manipulation program & library
 
-### Dependency
+## Installation
 
-_[Tornado](https://github.com/tornadoweb/tornado)_ - A Python web framework and asynchronous networking library
+*Scapy* needs root privileges to create raw sockets because it uses the Python socket library.
 
-_[Scapy](https://github.com/secdev/scapy)_ - A Python-based interactive packet manipulation program & library - __version: 2.4.0__
+```bash
+sudo pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+cd src
+sudo python3 main.py
+```
 
 ---
 
