@@ -1,2 +1,2 @@
 scapy==2.4.4
-tornado==6.1
+tornado==6.3.3
